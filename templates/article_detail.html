@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<form action="{{ url_for('/articles') }}" method="post">
+  <div class="mb-3">
+    <label for="title" class="form-label">Título</label>
+    <input type="text" value="{{article.title}}" class="form-control" id="title" aria-describedby="title">
+  </div>
+  <div class="mb-3">
+    <label for="mensagem" class="form-label">Mensagem</label>
+    <input type="text" value="{{article.body}}" class="form-control" id="mensagem" aria-describedby="mensagem">
+  </div>
+  <div class="mb-3">
+    <label for="author" class="form-label">Autor</label>
+    <input type="text" value="{{article.author}}" class="form-control" id="author" aria-describedby="author">
+  </div>
+  <div class="mb-3">
+    <label for="date_created" class="form-label">Criado em</label>
+    <input type="text" value="{{article.date_created}}" class="form-control" id="date_created" aria-describedby="date_created">
+  </div>
+  <button type="submit" class="btn btn-primary">Salvar</button>
+</form>
+{% endblock %}
